@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Makalah Maker</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <h2>Makalah Maker By Ukii</h2>
+
+  Nama File PDF: <input type="text" id="namaFile" placeholder="contoh: makalah_aing.pdf"><br/><br/>
+
+  Upload Logo Sekolah: <input type="file" id="logo"><br/><br/>
+
+  <!-- Data Sekolah & Siswa -->
+  Nama Sekolah: <input type="text" id="namaSekolah" placeholder="SMA Blablabla"><br/>
+  Mata Pelajaran: <input type="text" id="mapel" placeholder="mapel naon"><br/>
+  Kelas: <input type="text" id="kelas" placeholder="contoh: x-1"><br/>
+  Nama Guru: <input type="text" id="guru" placeholder="Naran Bapak/Ibu guruna"><br/>
+  Nama Penyusun: <input type="text" id="penyusun" placeholder="Naran sia"><br/>
+  Tahun: <input type="text" id="tahun" placeholder="Tahun iraha ayeuna"><br/><br/>
+
+  Judul Makalah: <input type="text" id="judulMakalah" placeholder="Judulna"><br/><br/>
+
+  Kata Pengantar:<br/>
+  <textarea id="kataPengantar" rows="4" cols="50"></textarea><br/><br/>
+
+  <!-- Container untuk Bab -->
+  <div id="containerBab"></div>
+  <button onclick="tambahBab()">Tambah Bab</button><br/><br/>
+
+  <button onclick="buatPDF()">Generate PDF</button>
+  <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+
+  <script src="Muwani.js"></script>
+  <style>
+/* Default Light Mode */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f6f8fa;
+  margin: 0;
+  padding: 0;
+  color: #24292f;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 2%;
+  color: #24292f;
+}
+
+input, textarea, button {
+  width: 90%;
+  max-width: 600px;
+  margin: 1% auto;
+  display: block;
+  padding: 1%;
+  font-size: 1em;
+  border: 1px solid #d1d5da;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #2ea44f;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #2c974b;
+}
+
+#containerBab {
+  width: 95%;
+  margin: 2% auto;
+  padding: 1%;
+  border: 1px solid #d1d5da;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+
+div[id^="bab"] {
+  border: 1px solid #e1e4e8;
+  padding: 2%;
+  margin-bottom: 2%;
+  border-radius: 6px;
+  background-color: #fafbfc;
+}
+
+h3 {
+  margin-top: 0;
+  color: #0366d6;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #181818;
+  color: #e1e4e8;
+}
+
+body.dark-mode input, 
+body.dark-mode textarea, 
+body.dark-mode button {
+  background-color: #2d2d2d;
+  border: 1px solid #444444;
+  color: #e1e4e8;
+}
+
+body.dark-mode button {
+  background-color: #58a6ff;
+}
+
+body.dark-mode button:hover {
+  background-color: #1d74c0;
+}
+
+body.dark-mode #containerBab {
+  background-color: #2d2d2d;
+  border: 1px solid #444444;
+}
+
+body.dark-mode div[id^="bab"] {
+  background-color: #333333;
+  border: 1px solid #444444;
+}
+
+body.dark-mode h3 {
+  color: #58a6ff;
+}
+</style>
+</body>
+</html>
